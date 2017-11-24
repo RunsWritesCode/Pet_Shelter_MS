@@ -1,12 +1,6 @@
-DROP TABLE owners;
 DROP TABLE animals;
+DROP TABLE owners;
 
-
-CREATE TABLE owners (
-  id serial4 primary key,
-  first_name varchar(255),
-  last_name varchar(255)
-);
 
 CREATE TABLE animals (
   id serial4 primary key,
@@ -15,6 +9,12 @@ CREATE TABLE animals (
   adopted BOOLEAN,
   trained BOOLEAN,
   healthy BOOLEAN,
-  adoptable BOOLEAN,
-  owner_id int4 REFERENCES owner(id)
+  adoptable BOOLEAN
+  -- owner_id int4 REFERENCES owner(id)
+);
+
+CREATE TABLE owners (
+  id serial4 primary key,
+  first_name varchar(255),
+  last_name varchar(255)
 );
