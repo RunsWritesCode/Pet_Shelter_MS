@@ -86,6 +86,17 @@
     </div>
   </div>
 
+
+<label>
+  Select an owner:
+  <select name="owner_id">
+    <option value="NULL">Please Select an Option</option>
+    <% for owner in @owners %>
+    <option value="<%=owner.id %>" <%= "selected" if @animal.owner_id == owner.id%> ><%=owner.pretty_name %></option>
+    <% end %>
+  </select>
+</label>
+
   <input type="submit" value="Submit">
 
 </form>

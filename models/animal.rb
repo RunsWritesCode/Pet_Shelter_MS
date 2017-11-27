@@ -3,6 +3,7 @@ require_relative('../db/sql_runner')
 class Animal
 
   attr_accessor :id, :name, :admission, :adopted, :trained, :healthy, :adoptable, :species, :breed
+  attr_reader :owner_id
 
 def initialize(options)
   @id = options['id'].to_i if options['id']
@@ -14,6 +15,7 @@ def initialize(options)
   @adoptable = options["adoptable"]
   @species = options["species"]
   @breed = options["breed"]
+  @owner_id = options["owner_id"].to_i if options["owner_id"]
 end
 
   def save()
@@ -53,12 +55,13 @@ end
     healthy,
     adoptable,
     species,
-    breed) =
+    breed,
+    owner_id) =
     (
-      $1, $2, $3, $4, $5, $6, $7, $8
+      $1, $2, $3, $4, $5, $6, $7, $8, $9
     )
-    WHERE id = $9"
-    values = [@name, @admission, @adopted, @trained, @healthy, @adoptable, @species, @breed, @id]
+    WHERE id = $10"
+    values = [@name, @admission, @adopted, @trained, @healthy, @adoptable, @species, @breed, @owner_id, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -94,5 +97,7 @@ end
     result = Owner.new( owner.first )
     return result
   end
+
+
 
 end

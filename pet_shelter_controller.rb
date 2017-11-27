@@ -35,12 +35,14 @@ end
 
 get '/animals/:id/edit' do # edit
   @animal = Animal.find( params[:id] )
+  @owners = Owner.all
   erb( :edit )
 end
 
 put '/animals/:id' do # update
   params[:admission] = Date.parse(params[:admission])
-  Animal.new( params ).update
+  animal = Animal.new(params)
+  animal.update
   redirect to '/animals'
 end
 
