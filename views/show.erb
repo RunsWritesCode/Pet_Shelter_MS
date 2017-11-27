@@ -1,0 +1,10 @@
+<!-- list all pets and admission date -->
+
+<% @animals.each do |animal| %>
+  <div class="animal-admission-list">
+    <p>Name: <%= animal.name() %></p>
+    <p>Admitted: <%= animal.admission %></p>
+    <p><a class="action link" href="/animals/:id/edit<%= animal.id %>">Edit</a></p>
+    <p><a class="action link" href="/animals/:id/profile<%= animal.id %>">Show profile</a></p>
+  </div>
+<% end %>

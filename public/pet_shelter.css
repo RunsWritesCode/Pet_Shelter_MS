@@ -1,0 +1,18 @@
+
+
+/*home page */
+
+big buttons on homepage
+
+#homepage buttons {
+  display: flex;
+  justify-content: space-around
+}
+
+h1 {
+  font-family: 'Merienda', cursive;
+
+}
+html {
+font-family: 'Lora', serif;
+}
