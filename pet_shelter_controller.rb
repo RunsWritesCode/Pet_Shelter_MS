@@ -19,7 +19,6 @@ end
 
 get '/animals/new' do # new
   @name = Name.all
-  @owner = Owner.all
   erb( :new )
 end
 

@@ -1,1 +1,92 @@
 <!-- create new pet form -->
+
+<form method="post" action="/animals">
+
+  <div class="field-group">
+    <label for="name-field" class="label">Name:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="name"
+      id="name-field"
+      placeholder="Name"
+      required
+      />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="admission-field" class="label">Admission:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="admission"
+      id="admission-field"
+      placeholder="Admission"
+      required
+      />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="species-field" class="label">Species:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="species"
+      id="species-field"
+      placeholder="Species"
+      required
+      />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="breed-field" class="label">Breed:</label>
+    <div class="field">
+      <input
+      type="text"
+      name="breed"
+      id="breed-field"
+      placeholder="Breed"
+      required
+      />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="adopted-field">Adopted:</label>
+    <div class="field">
+      <input type="radio" name="adopted" value="true">Adopted<br>
+      <input type="radio" name="adopted" value="false" checked>Not adopted<br>
+    </div>
+  </div>
+
+
+
+  <div class="field-group">
+    <label for="trained-field">Trained:</label>
+    <div class="field">
+      <input type="radio" name="trained" value="true">Yes<br>
+      <input type="radio" name="trained" value="false" checked>No<br>
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="healthy-field">Healthy:</label>
+    <div class="field">
+      <input type="radio" name="healthy" value="true">Yes<br>
+      <input type="radio" name="healthy" value="false" checked>No<br>
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label for="adoptable-field">Adoptable:</label>
+    <div class="field">
+      <input type="radio" name="adoptable" value="true">Yes<br>
+      <input type="radio" name="adoptable" value="false" checked>No<br>
+    </div>
+  </div>
+
+<button class="big-button button">Create pet record</button>
+</form>

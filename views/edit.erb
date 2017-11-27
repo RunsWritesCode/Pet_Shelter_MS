@@ -1,5 +1,5 @@
 <!-- edit pet profile -->
-<!-- radio buttons syntax unresolved -->
+<!-- assign new owner not possible -->
 
 <form method="post" action="/animals/<%= @animal.id %>">
   <input type="hidden" name="_method" value="put">
@@ -84,7 +84,6 @@
       <input type="radio" name="adoptable" value="false"<%= "checked" if !@animal.adoptable() %> >No<br>
     </div>
   </div>
-
 
   <input type="submit" value="Submit">
 
