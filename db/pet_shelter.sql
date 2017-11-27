@@ -12,7 +12,7 @@ CREATE TABLE animals (
   name varchar(255),
   species varchar(255),
   breed varchar(255),
-  admission varchar(255),
+  admission date,
   adopted BOOLEAN,
   trained BOOLEAN,
   healthy BOOLEAN,

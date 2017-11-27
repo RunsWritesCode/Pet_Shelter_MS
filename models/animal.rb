@@ -58,7 +58,7 @@ end
       $1, $2, $3, $4, $5, $6, $7, $8
     )
     WHERE id = $9"
-    values = [@name, @admission, @adopted, @trained, @healthy, @adoptable, @species, @breed]
+    values = [@name, @admission, @adopted, @trained, @healthy, @adoptable, @species, @breed, @id]
     SqlRunner.run( sql, values )
   end
 

@@ -20,7 +20,7 @@
     <label for="admission-field">Admission:</label>
     <div class="field">
       <input
-      type="text"
+      type="date"
       name="admission"
       id="admission-field"
       value="<%= @animal.admission %>"
@@ -56,32 +56,33 @@
   <div class="field-group">
     <label for="adopted-field">Adopted:</label>
     <div class="field">
-      <input type="radio" name="adopted" value="true" <%= "checked" if @animal.adopted() %> >Adopted<br>
-      <input type="radio" name="adopted" value="false"<%= "checked" if !@animal.adopted() %> >Not adopted<br>
+      <p><%= @animal.adopted %></p>
+      <input type="radio" name="adopted" value="t" <%= "checked" if @animal.adopted == "t" %> >Adopted<br>
+      <input type="radio" name="adopted" value="f" <%= "checked" if @animal.adopted == "f" %> >Not adopted<br>
     </div>
   </div>
 
   <div class="field-group">
     <label for="trained-field">Trained:</label>
     <div class="field">
-      <input type="radio" name="trained" value="true" <%= "checked" if @animal.trained() %> >Yes<br>
-      <input type="radio" name="trained" value="false"<%= "checked" if !@animal.trained() %> >No<br>
+      <input type="radio" name="trained" value="t" <%= "checked" if @animal.trained == "t" %> >Yes<br>
+      <input type="radio" name="trained" value="f"<%= "checked" if @animal.trained == "f" %> >No<br>
     </div>
   </div>
 
   <div class="field-group">
     <label for="healthy-field">Healthy:</label>
     <div class="field">
-      <input type="radio" name="healthy" value="true" <%= "checked" if @animal.healthy() %> >Yes<br>
-      <input type="radio" name="healthy" value="false"<%= "checked" if !@animal.healthy() %> >No<br>
+      <input type="radio" name="healthy" value="t" <%= "checked" if @animal.healthy == "t" %> >Yes<br>
+      <input type="radio" name="healthy" value="f"<%= "checked" if @animal.healthy == "f" %> >No<br>
     </div>
   </div>
 
   <div class="field-group">
     <label for="adoptable-field">Adoptable:</label>
     <div class="field">
-      <input type="radio" name="adoptable" value="true" <%= "checked" if @animal.adoptable() %> >Yes<br>
-      <input type="radio" name="adoptable" value="false"<%= "checked" if !@animal.adoptable() %> >No<br>
+      <input type="radio" name="adoptable" value="t" <%= "checked" if @animal.adoptable == "t" %> >Yes<br>
+      <input type="radio" name="adoptable" value="f"<%= "checked" if @animal.adoptable == "f" %> >No<br>
     </div>
   </div>
 

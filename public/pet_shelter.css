@@ -2,17 +2,45 @@
 
 /*home page */
 
-big buttons on homepage
 
-#homepage buttons {
-  display: flex;
-  justify-content: space-around
-}
-
-h1 {
-  font-family: 'Merienda', cursive;
-
-}
 html {
 font-family: 'Lora', serif;
 }
+
+h1 {
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: 'Merienda', cursive;
+  color: #1D044C;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1D044C;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #CBEAFC;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover {
+    background-color: #330784;
+}
+
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }

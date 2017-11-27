@@ -1,9 +1,10 @@
 require_relative('../models/animal')
 require_relative('../models/owner')
+require("date")
 
 animal1 = Animal.new({
   "name" => "Gaspode",
-  "admission" => "01.02.2017",
+  "admission" => Date.new(2017, 1, 27),
   "adopted" => false,
   "trained" => true,
   "healthy" => true,
@@ -14,7 +15,7 @@ animal1 = Animal.new({
 
 animal2 = Animal.new({
   "name" => "Grebbo",
-  "admission" => "01.03.2017",
+  "admission" => Date.new(2017, 2, 24),
   "adopted" => false,
   "trained" => false,
   "healthy" => true,

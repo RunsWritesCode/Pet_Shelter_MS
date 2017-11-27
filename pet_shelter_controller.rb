@@ -1,7 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/reloader' )
 require( 'pry-byebug' )
-
+require('date')
 require_relative( './models/animal' )
 require_relative( './models/owner' )
 
@@ -18,7 +18,7 @@ get '/animals/show' do # show
 end
 
 get '/animals/new' do # new
-  @name = Name.all
+  @animals = Animal.all
   erb( :new )
 end
 
@@ -39,6 +39,12 @@ get '/animals/:id/edit' do # edit
 end
 
 put '/animals/:id' do # update
+  params[:admission] = Date.parse(params[:admission])
   Animal.new( params ).update
   redirect to '/animals'
+end
+
+get '/animals/:id/profile' do # profile
+  @animal = Animal.find( params[:id] )
+  erb( :profile )
 end
