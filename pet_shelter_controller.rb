@@ -22,6 +22,12 @@ get '/animals/new' do # new
   erb( :new )
 end
 
+get '/animals/adopt' do
+  @animals = Animal.all_adoptable
+  @owners = Owner.all
+  erb( :adopt)
+end
+
 get '/animals/:id' do # search
   @animal = Animal.find( params[:id] )
   erb( :search )

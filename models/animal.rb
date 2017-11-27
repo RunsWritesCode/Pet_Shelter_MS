@@ -89,6 +89,15 @@ end
     return result
   end
 
+  def self.all_adoptable( )
+    sql = "SELECT * FROM animals
+    WHERE adoptable = TRUE"
+    values = []
+    animals = SqlRunner.run( sql, values )
+    result = animals.map { |animal| Animal.new( animal ) }
+    return result
+  end
+
   def owner
     sql = "SELECT * FROM owners
     WHERE id = $1"
