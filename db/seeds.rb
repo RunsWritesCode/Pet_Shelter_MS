@@ -2,21 +2,25 @@ require_relative('../models/animal')
 require_relative('../models/owner')
 
 animal1 = Animal.new({
-  "name" => "Inspector Carrot",
+  "name" => "Gaspode",
   "admission" => "01.02.2017",
   "adopted" => false,
   "trained" => true,
   "healthy" => true,
-  "adoptable" => true
+  "adoptable" => true,
+  "species" => "dog",
+  "breed" => "terrier"
   })
 
 animal2 = Animal.new({
-  "name" => "Nanny Ogg",
+  "name" => "Grebbo",
   "admission" => "01.03.2017",
   "adopted" => false,
   "trained" => false,
   "healthy" => true,
-  "adoptable" => false
+  "adoptable" => false,
+  "species" => "cat",
+  "breed" => "mixed"
   })
 
 animal1.save

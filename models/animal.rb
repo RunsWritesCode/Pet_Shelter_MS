@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Animal
 
-  attr_accessor :id, :name, :admission, :adopted, :trained, :healthy, :adoptable
+  attr_accessor :id, :name, :admission, :adopted, :trained, :healthy, :adoptable, :species, :breed
 
 def initialize(options)
   @id = options['id'].to_i if options['id']
@@ -12,6 +12,8 @@ def initialize(options)
   @trained = options["trained"]
   @healthy = options["healthy"]
   @adoptable = options["adoptable"]
+  @species = options["species"]
+  @breed = options["breed"]
 end
 
   def save()
@@ -21,7 +23,9 @@ end
     adopted,
     trained,
     healthy,
-    adoptable)
+    adoptable,
+    species,
+    breed)
     VALUES
     (
       $1,
@@ -29,9 +33,11 @@ end
       $3,
       $4,
       $5,
-      $6)
+      $6,
+      $7,
+      $8)
       RETURNING *"
-      values = [@name, @admission, @adopted, @trained, @healthy, @adoptable]
+      values = [@name, @admission, @adopted, @trained, @healthy, @adoptable, @species, @breed]
       pet = SqlRunner.run(sql, values)
       @id = pet.first()['id'].to_i
   end
@@ -40,17 +46,19 @@ end
   def update()
     sql = "UPDATE animals
     SET
+    ( name,
+    admission,
+    adopted,
+    trained,
+    healthy,
+    adoptable,
+    species,
+    breed) =
     (
-      first_name,
-      last_name,
-      topping_id,
-      quantity
-    ) =
-    (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5, $6, $7, $8
     )
-    WHERE id = $5"
-    values = [@first_name, @last_name, @topping_id, @quantity, @id]
+    WHERE id = $9"
+    values = [@name, @admission, @adopted, @trained, @healthy, @adoptable, @species, @breed]
     SqlRunner.run( sql, values )
   end
 
@@ -86,5 +94,5 @@ end
     result = Owner.new( owner.first )
     return result
   end
-  
+
 end

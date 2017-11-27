@@ -16,12 +16,12 @@ class Owner
     last_name)
     VALUES
       (
-        $1,
-        $2)
-        RETURNING *"
-        values = [@first_name, @last_name]
-        owner = SqlRunner.run(sql, values)
-        @id = owner.first()['id'].to_i
+      $1,
+      $2)
+      RETURNING *"
+      values = [@first_name, @last_name]
+      owner = SqlRunner.run(sql, values)
+      @id = owner.first()['id'].to_i
   end
 
   def pretty_name()
@@ -31,16 +31,12 @@ class Owner
   def update()
   sql = "UPDATE owners
   SET
+  (first_name,
+  last_name) =
   (
-    first_name,
-    last_name,
-    topping_id,
-    quantity
-  ) =
-  (
-    $1, $2, $3, $4
+    $1, $2
   )
-  WHERE id = $5"
+  WHERE id = $3"
   values = [@first_name, @last_name, @topping_id, @quantity, @id]
   SqlRunner.run( sql, values )
 end

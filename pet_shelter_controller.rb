@@ -5,12 +5,14 @@ require( 'pry-byebug' )
 require_relative( './models/animal' )
 require_relative( './models/owner' )
 
+# working
 get '/animals' do # index
   @animals = Animal.all()
   erb( :index )
 end
 
-get '/animals' do # show
+# working :)
+get '/animals/show' do # show
   @animals = Animal.all()
   erb( :show )
 end
@@ -34,7 +36,6 @@ end
 
 get '/animals/:id/edit' do # edit
   @animal = Animal.find( params[:id] )
-  # @owner = Owner.all
   erb( :edit )
 end
 
