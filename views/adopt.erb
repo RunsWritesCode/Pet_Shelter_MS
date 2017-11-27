@@ -1,6 +1,7 @@
-<form method="post" action="/animals/adopt %>">
+<form method="post" action="/animals/adopt %>" class="form-container">
   <input type="hidden" name="_method" value="put">
 
+  <div class="form-title"><h2>Adopt</h2></div>
     <label>
       Select an animal:
       <select name="name">
@@ -9,8 +10,7 @@
         <% end %>
       </select>
     </label>
-
-
+<br />
     <label>
       Select an owner:
       <select name="owner_id">
@@ -21,6 +21,6 @@
     </label>
 
 
-    <input type="submit" value="Submit">
+    <input class="submit-button" type="submit" value="Submit">
 
   </form>
