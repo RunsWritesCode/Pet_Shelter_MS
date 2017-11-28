@@ -46,9 +46,15 @@ post '/animals' do # create
 end
 
 put '/animals/:id' do # update
-  params[:admission] = Date.parse(params[:admission])
-  animal = Animal.new(params)
-  animal.update
+  if params[:owner_id]
+    animal = Animal.find( params[:id].to_i)
+    animal.owner_id = params[:owner_id].to_i
+    animal.update
+  else
+    params[:admission] = Date.parse(params[:admission])
+    animal = Animal.new(params)
+    animal.update
+  end
   redirect to '/animals'
 end
 

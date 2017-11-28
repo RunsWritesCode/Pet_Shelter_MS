@@ -2,8 +2,7 @@ require_relative('../db/sql_runner')
 
 class Animal
 
-  attr_accessor :id, :name, :admission, :adopted, :trained, :healthy, :adoptable, :species, :breed
-  attr_reader :owner_id
+  attr_accessor :id, :name, :admission, :adopted, :trained, :healthy, :adoptable, :species, :breed, :owner_id
 
 def initialize(options)
   @id = options['id'].to_i if options['id']
@@ -106,7 +105,6 @@ end
     result = Owner.new( owner.first )
     return result
   end
-
 
 
 end

@@ -1,5 +1,4 @@
 <!-- list all pets and admission date -->
-<!-- nice to have: make it a table -->
 <table>
 <tr>
   <th>
@@ -19,8 +18,9 @@
       <tr class="animal-admission-list">
         <td><%= animal.name() %></td>
         <td><%= animal.admission %></td>
-        <td><a class="action link" href="/animals/<%= animal.id %>/edit">Edit</a></td>
-        <td><a class="action link" href="/animals/<%= animal.id %>">Show profile</a></td>
+        <td><a class="submit-button" href="/animals/<%= animal.id %>/edit">Edit</a></td>
+        <td><a class="submit-button" href="/animals/<%= animal.id %>">Show profile</a></td>
+        <td><a class="submit-button" href="/animals/<%= animal.id %>/delete">Delete profile</a></td>
       </tr>
     <% end %>
 
