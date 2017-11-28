@@ -24,8 +24,44 @@ animal2 = Animal.new({
   "breed" => "mixed"
   })
 
+animal3 = Animal.new({
+  "name" => "Wuffles",
+  "admission" => Date.new(2017, 1, 27),
+  "adopted" => false,
+  "trained" => true,
+  "healthy" => true,
+  "adoptable" => true,
+  "species" => "dog",
+  "breed" => "small mixed breed"
+  })
+
+animal4 = Animal.new({
+  "name" => "Dangerous Beans",
+  "admission" => Date.new(2017, 1, 27),
+  "adopted" => false,
+  "trained" => true,
+  "healthy" => true,
+  "adoptable" => true,
+  "species" => "rat",
+  "breed" => "albino"
+  })
+
+animal5 = Animal.new({
+  "name" => "Errol",
+  "admission" => Date.new(2017, 1, 27),
+  "adopted" => false,
+  "trained" => true,
+  "healthy" => true,
+  "adoptable" => true,
+  "species" => "dragon",
+  "breed" => "draco lunaris"
+  })
+
 animal1.save
 animal2.save
+animal3.save
+animal4.save
+animal5.save
 
 owner1 = Owner.new({
   "first_name" => "Commander",
@@ -37,5 +73,17 @@ owner2 = Owner.new({
   "last_name" => "Pratchett"
   })
 
+owner3 = Owner.new({
+  "first_name" => "Sybil",
+  "last_name" => "Ramkin"
+  })
+
+owner4 = Owner.new({
+  "first_name" => "Granny",
+  "last_name" => "Weatherwax"
+  })
+
 owner1.save
 owner2.save
+owner3.save
+owner4.save

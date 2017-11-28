@@ -1,11 +1,11 @@
-<!-- list all pets and admission date -->
-<!-- nice to have: make it a table -->
-
-<% @animals.each do |animal| %>
-  <div class="animal-admission-list">
-    <p>Name: <%= animal.name() %></p>
-    <p>Admitted: <%= animal.admission %></p>
-    <p><a class="action link" href="/animals/<%= animal.id %>/edit">Edit</a></p>
-    <p><a class="action link" href="/animals/<%= animal.id %>/profile">Show profile</a></p>
+<!-- one animal -->
+  <div class="animal-profile">
+    <p>Name: <%= @animal.name() %></p>
+    <p>Admitted: <%= @animal.admission %></p>
+    <p><a class="action link" href="/animals/<%= @animal.id %>/edit">Update record</a></p>
   </div>
-<% end %>
+
+  <form method="post" action="/animals/<%= @animal.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <button class="big-button button">Delete profile</button>
+  </form>

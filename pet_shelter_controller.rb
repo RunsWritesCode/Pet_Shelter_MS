@@ -5,20 +5,14 @@ require('date')
 require_relative( './models/animal' )
 require_relative( './models/owner' )
 
-# working
+
 get '/animals' do # index
   @animals = Animal.all()
   erb( :index )
 end
 
-# working :)
-get '/animals/show' do # show
+get '/animals/new' do
   @animals = Animal.all()
-  erb( :show )
-end
-
-get '/animals/new' do # new
-  @animals = Animal.all
   erb( :new )
 end
 
@@ -28,21 +22,27 @@ get '/animals/adopt' do
   erb( :adopt)
 end
 
-get '/animals/:id' do # search
-  @animal = Animal.find( params[:id] )
-  erb( :search )
+get '/animals/owners' do
+  @animals = Animal.all
+  @owners = Owner.all
+  erb( :owners)
 end
 
-post '/animals' do # create
-  @animal = Animal.new( params )
-  @animal.save()
-  redirect to "/animals"
+get '/animals/:id' do #show
+  @animal = Animal.find( params[:id])
+  erb( :show )
 end
 
 get '/animals/:id/edit' do # edit
   @animal = Animal.find( params[:id] )
   @owners = Owner.all
   erb( :edit )
+end
+
+post '/animals' do # create
+  @animal = Animal.new( params )
+  @animal.save()
+  redirect to "/animals"
 end
 
 put '/animals/:id' do # update
@@ -52,7 +52,6 @@ put '/animals/:id' do # update
   redirect to '/animals'
 end
 
-get '/animals/:id/profile' do # profile
-  @animal = Animal.find( params[:id] )
-  erb( :profile )
+delete '/animals/:id' do
+  redirect to '/animals'
 end

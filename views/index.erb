@@ -1,9 +1,27 @@
-<!-- home page?
+<!-- list all pets and admission date -->
+<!-- nice to have: make it a table -->
+<table>
+<tr>
+  <th>
+    Name
+  </th>
+  <th>
+    Admitted
+  </th>
+  <th>
+    Edit
+  </th>
+  <th>
+    Show
+  </th>
+</tr>
+    <% @animals.each do |animal| %>
+      <tr class="animal-admission-list">
+        <td><%= animal.name() %></td>
+        <td><%= animal.admission %></td>
+        <td><a class="action link" href="/animals/<%= animal.id %>/edit">Edit</a></td>
+        <td><a class="action link" href="/animals/<%= animal.id %>">Show profile</a></td>
+      </tr>
+    <% end %>
 
-4 links to
-animals/new
-animals/search
-animals/show
-animals/:id/edit
-
--->
+</table>
