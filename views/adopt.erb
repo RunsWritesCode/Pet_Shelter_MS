@@ -4,7 +4,7 @@
   <div class="form-title"><h2>Adopt</h2></div>
     <label>
       Select an animal:
-      <select name="name">
+      <select name="animal_id">
         <%for animal in @animals %>
           <option value="<%=animal.id %>"><%=animal.name %></option>
         <% end %>

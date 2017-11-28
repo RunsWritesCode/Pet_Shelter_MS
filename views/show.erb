@@ -1,11 +1,10 @@
 <!-- one animal -->
-  <div class="animal-profile">
-    <p>Name: <%= @animal.name() %></p>
-    <p>Admitted: <%= @animal.admission %></p>
-    <p><a class="action link" href="/animals/<%= @animal.id %>/edit">Update record</a></p>
-  </div>
-
+<div class="form-container">
+  <p>Name: <%= @animal.name() %></p>
+  <p>Admitted: <%= @animal.admission %></p>
+  <p><a class="submit-button" href="/animals/<%= @animal.id %>/edit">Update record</a></p>
   <form method="post" action="/animals/<%= @animal.id %>">
     <input type="hidden" name="_method" value="delete">
-    <button class="big-button button">Delete profile</button>
+    <button class="submit-button">Delete profile</button>
   </form>
+</div>

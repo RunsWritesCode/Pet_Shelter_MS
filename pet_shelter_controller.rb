@@ -45,16 +45,17 @@ post '/animals' do # create
   redirect to "/animals"
 end
 
+put '/animals/adopt' do # update
+  animal = Animal.find( params[:animal_id].to_i)
+  animal.owner_id = params[:owner_id].to_i
+  animal.update
+  redirect to "/animals"
+end
+
 put '/animals/:id' do # update
-  if params[:owner_id]
-    animal = Animal.find( params[:id].to_i)
-    animal.owner_id = params[:owner_id].to_i
-    animal.update
-  else
-    params[:admission] = Date.parse(params[:admission])
-    animal = Animal.new(params)
-    animal.update
-  end
+  params[:admission] = Date.parse(params[:admission])
+  animal = Animal.new(params)
+  animal.update
   redirect to '/animals'
 end
 
