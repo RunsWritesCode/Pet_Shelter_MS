@@ -1,7 +1,5 @@
 <!-- edit pet profile -->
-<!-- assign new owner not possible -->
-
-<form method="post" action="/animals/<%= @animal.id %>">
+<form method="post" action="/animals/<%= @animal.id %>" class="form-container">
   <input type="hidden" name="_method" value="put">
 
   <div class="field-group">
@@ -56,9 +54,8 @@
   <div class="field-group">
     <label for="adopted-field">Adopted:</label>
     <div class="field">
-      <p><%= @animal.adopted %></p>
-      <input type="radio" name="adopted" value="t" <%= "checked" if @animal.adopted == "t" %> >Adopted<br>
-      <input type="radio" name="adopted" value="f" <%= "checked" if @animal.adopted == "f" %> >Not adopted<br>
+      <input type="radio" name="adopted" value="t" <%= "checked" if @animal.adopted == "t" %> >Yes<br>
+      <input type="radio" name="adopted" value="f" <%= "checked" if @animal.adopted == "f" %> >No<br>
     </div>
   </div>
 
@@ -85,9 +82,6 @@
       <input type="radio" name="adoptable" value="f"<%= "checked" if @animal.adoptable == "f" %> >No<br>
     </div>
   </div>
-
-
-
 
   <input type="submit" value="Submit">
 

@@ -36,8 +36,8 @@ li a {
 }
 
 li a:hover {
-  background-color: #37AF54;
-  color: #000;
+  background: -webkit-linear-gradient(top, #6b9e34, #2b3994);
+  color: #fff;
 }
 
 IMG.banner {
@@ -52,13 +52,17 @@ body {
 /* tables */
 
 
-.clear-table
+input[type="radio"] {
+  margin-right;40px;
+  margin-left: 80px;
+}
 
 
 /* forms and tables */
 
 table {
   margin: auto;
+  color: #fff;
 }
 
 form {
@@ -72,6 +76,7 @@ form {
 th, td {
     padding: 15px;
     text-align: left;
+    border-bottom: 1px solid #000;
 }
 
 
@@ -117,6 +122,8 @@ th, td {
   text-shadow: #e5eafc 0 1px 0;
 }
 
+/* submit button*/
+
 .submit-container {
   margin:8px 0;
   text-align: right;
@@ -145,6 +152,41 @@ th, td {
 }
 
 .submit-button:active {
+  text-shadow: #31540c 0 1px 0;
+  border: 1px solid #447314;
+  background: #8dc059;
+  background: -webkit-linear-gradient(top, #6aa436, #8dc059);
+  color: #fff;
+}
+
+.danger-submit-container {
+  margin:8px 0;
+  text-align: right;
+}
+
+.danger-submit-button {
+  border: 1px solid #447314;
+  background: #2b3994;
+  background: -webkit-linear-gradient(top, #6b9e34, #2b3994);
+  border-radius: 11px;
+  box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+  text-shadow: #050a01 0 1px 0;
+  color: #fafafa;
+  padding: 8.5px 18px;
+  font-size: 14px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.danger-submit-button:hover {
+  border: 1px solid #447314;
+  text-shadow: #31540c 0 1px 0;
+  background: #285201;
+  background: -webkit-linear-gradient(top, #ff0000, #8dc059);
+  color: #000;
+}
+
+.danger-submit-button:active {
   text-shadow: #31540c 0 1px 0;
   border: 1px solid #447314;
   background: #8dc059;
