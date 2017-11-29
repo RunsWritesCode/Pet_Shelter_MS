@@ -47,7 +47,7 @@ end
 
 put '/animals/adopt' do # update
   animal = Animal.find( params[:animal_id].to_i)
-  animal.owner_id = params[:owner_id].to_i
+  animal.adopt(params[:owner_id].to_i)
   animal.update
   redirect to "/animals"
 end

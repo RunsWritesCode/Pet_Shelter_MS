@@ -15,6 +15,7 @@ def initialize(options)
   @species = options["species"]
   @breed = options["breed"]
   @owner_id = options["owner_id"].to_i if options["owner_id"]
+
 end
 
   def save()
@@ -90,7 +91,7 @@ end
 
   def self.all_adoptable( )
     sql = "SELECT * FROM animals
-    WHERE adoptable = TRUE"
+    WHERE adoptable = TRUE and adopted = FALSE"
     values = []
     animals = SqlRunner.run( sql, values )
     result = animals.map { |animal| Animal.new( animal ) }
@@ -104,6 +105,11 @@ end
     owner = SqlRunner.run( sql, values )
     result = Owner.new( owner.first )
     return result
+  end
+
+  def adopt(owner_id)
+    @owner_id = owner_id
+    @adopted = TRUE
   end
 
 
