@@ -10,7 +10,8 @@ animal1 = Animal.new({
   "healthy" => true,
   "adoptable" => true,
   "species" => "dog",
-  "breed" => "terrier"
+  "breed" => "terrier",
+  "profile_pic" => "Gaspode.jpg"
   })
 
 animal2 = Animal.new({
@@ -21,7 +22,8 @@ animal2 = Animal.new({
   "healthy" => true,
   "adoptable" => false,
   "species" => "cat",
-  "breed" => "mixed"
+  "breed" => "mixed",
+  "profile_pic" => "Greebo.jpg"
   })
 
 animal3 = Animal.new({
@@ -54,7 +56,8 @@ animal5 = Animal.new({
   "healthy" => true,
   "adoptable" => true,
   "species" => "dragon",
-  "breed" => "draco lunaris"
+  "breed" => "draco lunaris",
+  "profile_pic" => "Errol.jpg"
   })
 
 animal1.save

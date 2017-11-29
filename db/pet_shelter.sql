@@ -17,5 +17,6 @@ CREATE TABLE animals (
   trained BOOLEAN,
   healthy BOOLEAN,
   adoptable BOOLEAN,
+  profile_pic varchar(255),
   owner_id int4 REFERENCES owners(id)
 );

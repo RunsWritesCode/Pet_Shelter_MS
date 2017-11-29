@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Animal
 
-  attr_accessor :id, :name, :admission, :adopted, :trained, :healthy, :adoptable, :species, :breed, :owner_id
+  attr_accessor :name, :admission, :adopted, :trained, :healthy, :adoptable, :species, :breed, :owner_id
+  attr_reader :profile_pic, :id
 
 def initialize(options)
   @id = options['id'].to_i if options['id']
@@ -15,7 +16,7 @@ def initialize(options)
   @species = options["species"]
   @breed = options["breed"]
   @owner_id = options["owner_id"].to_i if options["owner_id"]
-
+  @profile_pic = options["profile_pic"]
 end
 
   def save()
@@ -27,7 +28,8 @@ end
     healthy,
     adoptable,
     species,
-    breed)
+    breed,
+    profile_pic)
     VALUES
     (
       $1,
@@ -37,9 +39,10 @@ end
       $5,
       $6,
       $7,
-      $8)
+      $8,
+      $9)
       RETURNING *"
-      values = [@name, @admission, @adopted, @trained, @healthy, @adoptable, @species, @breed]
+      values = [@name, @admission, @adopted, @trained, @healthy, @adoptable, @species, @breed, @profile_pic]
       pet = SqlRunner.run(sql, values)
       @id = pet.first()['id'].to_i
   end
@@ -98,6 +101,15 @@ end
     return result
   end
 
+  def self.all_not_adoptable( )
+    sql = "SELECT * FROM animals
+    WHERE adoptable = FALSE"
+    values = []
+    animals = SqlRunner.run( sql, values )
+    result = animals.map { |animal| Animal.new( animal ) }
+    return result
+  end
+
   def owner
     sql = "SELECT * FROM owners
     WHERE id = $1"
@@ -112,5 +124,20 @@ end
     @adopted = TRUE
   end
 
+  def health_check
+    if @healthy == true
+      return "healthy!"
+    else
+      return "undergoing treatment"
+    end
+  end
+
+  def training_check
+    if @trained == true
+      return "I'm a good #{@breed}"
+    else
+      return "I need some work"
+    end
+  end
 
 end

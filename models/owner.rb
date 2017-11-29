@@ -58,4 +58,15 @@ def self.find( id )
   return result
 end
 
+def animals
+  sql = "SELECT animals.*
+  FROM animals
+  WHERE $1 = animals.owner_id"
+  values = [@id]
+  animals = SqlRunner.run( sql, values )
+  result = animals.map { |animal| Animal.new(animal) }
+end
+
+
+
 end

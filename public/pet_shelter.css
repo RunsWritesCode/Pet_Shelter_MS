@@ -5,7 +5,7 @@ html {
   font-family: 'Lora', serif;
 }
 
-h1 {
+h1, h3 {
   font-family: 'Merienda', cursive;
   color: #CBEAFC;
   text-align: center;
@@ -16,6 +16,7 @@ h2 {
   color: #1D044C;
 }
 
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -24,11 +25,11 @@ ul {
   background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
 }
 
-li {
+li  {
   float: left;
 }
 
-li a {
+li a  {
   display: block;
   color: #CBEAFC;
   text-align: center;
@@ -48,6 +49,19 @@ body {
   background: -webkit-linear-gradient(left, rgba(68,86,156,1) 0%, rgba(33,85,99,1) 41%, rgba(32,80,94,1) 57%, rgba(28,68,79,1) 100%);
 }
 
+/* profile */
+
+#profile-pic {
+  width: 250px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#profile-text {
+  display: flex;
+  justify-content: space-between;
+}
 
 /* tables */
 
@@ -58,20 +72,12 @@ input[type="radio"] {
 }
 
 
-/* forms and tables */
+/* tables */
 
 table {
   margin: auto;
   color: #fff;
 }
-
-form {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 24px;
-}
-
 
 th, td {
     padding: 15px;
@@ -79,6 +85,14 @@ th, td {
     border-bottom: 1px solid #000;
 }
 
+/* forms */
+
+form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+}
 
 .form-container {
   border: 1px solid #1731b3;
@@ -110,7 +124,7 @@ th, td {
 
 .form-container h2 {
   text-shadow: #e5eafc 0 1px 0;
-  font-size:18px;
+  font-size:22px;
   margin: 0 0 10px 0;
   font-weight:bold;
   text-align:center;

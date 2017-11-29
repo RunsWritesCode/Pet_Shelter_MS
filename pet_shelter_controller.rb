@@ -11,9 +11,25 @@ get '/animals' do # index
   erb( :index )
 end
 
+get '/animals/available' do
+  @animals = Animal.all_adoptable
+  erb( :available )
+end
+
+get '/animals/arrivals' do
+  @animals = Animal.all_not_adoptable
+  erb( :new_arrivals )
+end
+
 get '/animals/new' do
   @animals = Animal.all()
   erb( :new )
+end
+
+get '/animals/adopted' do
+  @owners = Owner.all
+  
+  erb( :owners)
 end
 
 get '/animals/adopt' do
@@ -22,11 +38,6 @@ get '/animals/adopt' do
   erb( :adopt)
 end
 
-get '/animals/owners' do
-  @animals = Animal.all
-  @owners = Owner.all
-  erb( :owners)
-end
 
 get '/animals/:id' do #show
   @animal = Animal.find( params[:id])
@@ -38,6 +49,7 @@ get '/animals/:id/edit' do # edit
   @owners = Owner.all
   erb( :edit )
 end
+
 
 post '/animals' do # create
   @animal = Animal.new( params )

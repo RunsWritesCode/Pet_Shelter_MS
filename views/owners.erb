@@ -1,6 +1,21 @@
-<!-- table of owners with their pets
-      pets have owner_id but owners don't have pet id -->
+<!-- table of owners and their pets -->
 
 <% @owners.each do |owner| %>
-<%= owner.pretty_name %>
-<%=
+  <%= owner.pretty_name %>
+  <% animals = owner.animals %>
+  <% if animals.length == 0 %>
+  <%= "no pets" %>
+  <% else %>
+  <% animals.each do |animal| %>
+  <table>
+    <tr class="adoptions">
+      <td><%= animal.owner_id %></td>
+      <td><%= animal.name() %></td>
+      <td><%= animal.species %></td>
+      <td><%= animal.breed %></td>
+      <td><a class="submit-button" href="/animals/<%= animal.id %>">Show profile</a></td>
+    </tr>
+  </table>
+  <% end %>
+  <% end %>
+<% end %>
