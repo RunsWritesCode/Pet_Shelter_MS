@@ -8,33 +8,26 @@
     <th>
       Pet
     </th>
-    <th>
-      Species
-    </th>
-    <th>
-      Breed
-    </th>
-    <th>
-      Pet profile
-    </th>
   </tr>
-  <tr>
-    <td>
-      <% @owners.each do |owner| %>
-      <%= owner.pretty_name %>
-      <% animals = owner.animals %>
-      <% if animals.length == 0 %>
-      <%= "no pets" %></td>
-      <% else %>
-      <% animals.each do |animal| %>
-      <td><%= animal.name() %></td>
-      <td><%= animal.species %></td>
-      <td><%= animal.breed %></td>
-      <td><a class="submit-button" href="/animals/<%= animal.id %>">Show profile</a></td>
-    </tr>
-    <% end %>
-    <% end %>
+  <% @owners.each do |owner| %>
+    <% animals = owner.animals %>
+    <tr>
+      <td>
+        <%= owner.pretty_name %>
+      </td>
+      <td>
+        <% if animals.length == 0 %>
+          <%= "no pets" %>
+        <% else %>
 
+            <% animals.each do |animal| %>
+              <p><a class="body-links" href="/animals/<%= animal.id %>"><%= animal.name() %></a></p>
+            <% end %>
 
-  </table>
+        <% end %>
+      </td>
+  </tr>
+
   <% end %>
+
+</table>

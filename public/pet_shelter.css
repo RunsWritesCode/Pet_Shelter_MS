@@ -1,6 +1,6 @@
 
 
-/*home page */
+/* elements */
 html {
   font-family: 'Lora', serif;
 }
@@ -17,7 +17,7 @@ h2 {
 }
 
 
-ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -25,11 +25,11 @@ ul {
   background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
 }
 
-li  {
+nav li  {
   float: left;
 }
 
-li a  {
+nav li a {
   display: block;
   color: #CBEAFC;
   text-align: center;
@@ -49,21 +49,57 @@ body {
   background: -webkit-linear-gradient(left, rgba(68,86,156,1) 0%, rgba(33,85,99,1) 41%, rgba(32,80,94,1) 57%, rgba(28,68,79,1) 100%);
 }
 
+a {
+  color: white;
+}
+
+a:hover {
+  background: -webkit-linear-gradient(top, #6b9e34, #2b3994);
+}
+
+footer {
+
+}
+
 /* profile */
+
+.profile-container {
+  border: 1px solid #1731b3;
+  background: #a2acc7;
+  background: -webkit-linear-gradient(top, #d4eeff, #a2acc7);
+  border-radius: 12px;
+  box-shadow: rgba(000,000,000,0.9) 0 1px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+  vertical-align: middle;
+  min-width:300px;
+  padding:20px;
+  width: 60%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  }
+
 
 #profile-pic {
   width: 250px;
   height: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  border-radius: 12px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #profile-text {
+  width: 250px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
 }
 
-/* tables */
+/* radio buttons */
 
 
 input[type="radio"] {
