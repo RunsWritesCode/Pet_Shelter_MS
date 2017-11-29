@@ -1,21 +1,40 @@
 <!-- table of owners and their pets -->
 
-<% @owners.each do |owner| %>
-  <%= owner.pretty_name %>
-  <% animals = owner.animals %>
-  <% if animals.length == 0 %>
-  <%= "no pets" %>
-  <% else %>
-  <% animals.each do |animal| %>
-  <table>
-    <tr class="adoptions">
-      <td><%= animal.owner_id %></td>
+<table>
+  <tr>
+    <th>
+      Owner
+    </th>
+    <th>
+      Pet
+    </th>
+    <th>
+      Species
+    </th>
+    <th>
+      Breed
+    </th>
+    <th>
+      Pet profile
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <% @owners.each do |owner| %>
+      <%= owner.pretty_name %>
+      <% animals = owner.animals %>
+      <% if animals.length == 0 %>
+      <%= "no pets" %></td>
+      <% else %>
+      <% animals.each do |animal| %>
       <td><%= animal.name() %></td>
       <td><%= animal.species %></td>
       <td><%= animal.breed %></td>
       <td><a class="submit-button" href="/animals/<%= animal.id %>">Show profile</a></td>
     </tr>
+    <% end %>
+    <% end %>
+
+
   </table>
   <% end %>
-  <% end %>
-<% end %>
