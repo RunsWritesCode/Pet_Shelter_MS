@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>
+    Name
+    </th>
+  <th>
+    Species
+  </th>
+  <th>
+    Breed
+  </th>
+  <th>
+    More
+  </th>
+  </tr>
+
+  <% @animals.each do |animal| %>
+    <tr class="available-animal-list">
+      <td><%= animal.name() %></td>
+      <td><%= animal.species %></td>
+      <td><%= animal.breed %></td>
+      <td><a class="submit-button" href="/animals/<%= animal.id %>">Show profile</a></td>
+    </tr>
+  <% end %>
+
+</table>
