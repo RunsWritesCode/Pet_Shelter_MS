@@ -71,8 +71,32 @@ animal6 = Animal.new({
   "healthy" => true,
   "adoptable" => true,
   "species" => "horse",
-  "breed" => "Death's horse",
+  "breed" => "flying horse",
   "profile_pic" => "binky.png"
+  })
+
+animal7 = Animal.new({
+  "name" => "Rob Anybody",
+  "admission" => Date.new(2017, 1, 27),
+  "adopted" => false,
+  "trained" => false,
+  "healthy" => true,
+  "adoptable" => false,
+  "species" => "pictsie",
+  "breed" => "Feegle",
+  "profile_pic" => "Rob Anybody.jpg"
+  })
+
+animal8 = Animal.new({
+  "name" => "The Librarian",
+  "admission" => Date.new(2017, 3, 27),
+  "adopted" => false,
+  "trained" => false,
+  "healthy" => true,
+  "adoptable" => false,
+  "species" => "orangutan",
+  "breed" => "librarian",
+  "profile_pic" => "Librarian.jpg"
   })
 
 animal1.save
@@ -81,6 +105,8 @@ animal3.save
 animal4.save
 animal5.save
 animal6.save
+animal7.save
+animal8.save
 
 owner1 = Owner.new({
   "first_name" => "Commander",
