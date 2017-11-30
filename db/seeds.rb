@@ -84,22 +84,26 @@ animal6.save
 
 owner1 = Owner.new({
   "first_name" => "Commander",
-  "last_name" => "Vimes"
+  "last_name" => "Vimes",
+  "address" => "Ramkin Residence, Ankh-Morpork"
   })
 
 owner2 = Owner.new({
   "first_name" => "Terry",
-  "last_name" => "Pratchett"
+  "last_name" => "Pratchett",
+  "address" => "You'll need to ask Binky!"
   })
 
 owner3 = Owner.new({
   "first_name" => "Sybil",
-  "last_name" => "Ramkin"
+  "last_name" => "Ramkin",
+  "address" => "Ramkin Residence, Ankh-Morpork"
   })
 
 owner4 = Owner.new({
   "first_name" => "Granny",
-  "last_name" => "Weatherwax"
+  "last_name" => "Weatherwax",
+  "address" => "Granny's House, Lancre, Ramtops"
   })
 
 owner1.save
