@@ -11,6 +11,11 @@ get '/animals' do # index
   erb( :"animals/index" )
 end
 
+get '/owners' do # index
+  @owners = Owner.all()
+  erb( :"owners/index" )
+end
+
 get '/animals/available' do
   @animals = Animal.all_adoptable
   erb( :"animals/available" )
@@ -46,12 +51,21 @@ get '/animals/:id' do #show
   erb( :"animals/show" )
 end
 
+get '/owners/:id' do
+  @owner = Owner.find( params[:id])
+  erb( :"owners/show" )
+end
+
 get '/animals/:id/edit' do # edit
   @animal = Animal.find( params[:id] )
   @owners = Owner.all
   erb( :"animals/edit" )
 end
 
+get '/owners/:id/edit' do # edit
+  @owner = Owner.find( params[:id] )
+  erb( :"owners/edit" )
+end
 
 post '/animals' do # create
   @animal = Animal.new( params )
@@ -72,8 +86,6 @@ put '/animals/adopt' do # update
   redirect to "/animals"
 end
 
-
-
 put '/animals/:id' do # update
   params[:admission] = Date.parse(params[:admission])
   animal = Animal.new(params)
@@ -81,9 +93,20 @@ put '/animals/:id' do # update
   redirect to '/animals'
 end
 
+put '/owners/:id' do # update
+  owner = Owner.new(params)
+  owner.update
+  redirect to '/owners'
+end
 
 delete '/animals/:id' do # delete
   animal = Animal.find( params[:id] )
   animal.delete()
   redirect to '/animals'
+end
+
+delete '/owners/:id' do # delete
+  owner = Owner.find( params[:id] )
+  owner.delete()
+  redirect to '/owners'
 end

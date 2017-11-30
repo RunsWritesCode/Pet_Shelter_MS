@@ -6,6 +6,9 @@
       Owner
     </th>
     <th>
+      Address
+    </th>
+    <th>
       Pet
     </th>
   </tr>
@@ -14,6 +17,9 @@
     <tr>
       <td>
         <%= owner.pretty_name %>
+      </td>
+      <td>
+        <%= owner.address %>
       </td>
       <td>
         <% if animals.length == 0 %>
@@ -26,6 +32,8 @@
 
         <% end %>
       </td>
+      <td><a class="submit-button" href="/owners/<%= owner.id %>/edit">Edit</a></td>
+      <td><a class="danger-submit-button" href="/owners/<%= owner.id %>/delete">Delete profile</a></td>
   </tr>
 
   <% end %>
