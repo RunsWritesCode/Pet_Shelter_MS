@@ -1,5 +1,5 @@
 <!-- edit owner profile -->
-<form method="post" action="/owners<%= @owner.id %>" class="form-container">
+<form method="post" action="/owners/<%= @owner.id %>" class="form-container">
   <input type="hidden" name="_method" value="put">
 
   <div class="field-group">
@@ -7,7 +7,7 @@
     <div class="field">
       <input
       type="text"
-      name="name"
+      name="first_name"
       id="name-field"
       value="<%= @owner.first_name %>"
       />

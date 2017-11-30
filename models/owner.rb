@@ -31,12 +31,13 @@ class Owner
   sql = "UPDATE owners
   SET
   (first_name,
-  last_name) =
+  last_name,
+  address) =
   (
     $1, $2, $3
   )
   WHERE id = $4"
-  values = [@first_name, @last_name, @address]
+  values = [@first_name, @last_name, @address, @id]
   SqlRunner.run( sql, values )
 end
 

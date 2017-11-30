@@ -6,12 +6,12 @@ require_relative( './models/animal' )
 require_relative( './models/owner' )
 
 
-get '/animals' do # index
+get '/animals' do
   @animals = Animal.all()
   erb( :"animals/index" )
 end
 
-get '/owners' do # index
+get '/owners' do
   @owners = Owner.all()
   erb( :"owners/index" )
 end
@@ -46,7 +46,7 @@ get '/animals/adopt' do
 end
 
 
-get '/animals/:id' do #show
+get '/animals/:id' do
   @animal = Animal.find( params[:id])
   erb( :"animals/show" )
 end
@@ -56,57 +56,59 @@ get '/owners/:id' do
   erb( :"owners/show" )
 end
 
-get '/animals/:id/edit' do # edit
+get '/animals/:id/edit' do
   @animal = Animal.find( params[:id] )
   @owners = Owner.all
   erb( :"animals/edit" )
 end
 
-get '/owners/:id/edit' do # edit
+get '/owners/:id/edit' do
   @owner = Owner.find( params[:id] )
   erb( :"owners/edit" )
 end
 
-post '/animals' do # create
+post '/animals' do
   @animal = Animal.new( params )
   @animal.save()
   redirect to "/animals"
 end
 
-post '/owners' do # create
+post '/owners' do
   @owner = Owner.new( params )
   @owner.save()
   redirect to "/animals"
 end
 
-put '/animals/adopt' do # update
+put '/animals/adopt' do
   animal = Animal.find( params[:animal_id].to_i)
   animal.adopt(params[:owner_id].to_i)
   animal.update
   redirect to "/animals"
 end
 
-put '/animals/:id' do # update
+put '/animals/:id' do
   params[:admission] = Date.parse(params[:admission])
   animal = Animal.new(params)
   animal.update
   redirect to '/animals'
 end
 
-put '/owners/:id' do # update
+put '/owners/:id' do
   owner = Owner.new(params)
   owner.update
   redirect to '/owners'
 end
 
-delete '/animals/:id' do # delete
+delete '/animals/:id/delete' do
   animal = Animal.find( params[:id] )
   animal.delete()
   redirect to '/animals'
 end
 
-delete '/owners/:id' do # delete
+delete '/owners/:id/delete' do
   owner = Owner.find( params[:id] )
-  owner.delete()
+  if owner.animals.length == 0
+    owner.delete()
+  end
   redirect to '/owners'
 end

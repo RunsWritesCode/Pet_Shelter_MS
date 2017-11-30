@@ -23,7 +23,10 @@
         <td><%= animal.admission %></td>
         <td><a class="submit-button" href="/animals/<%= animal.id %>/edit">Edit</a></td>
         <td><a class="submit-button" href="/animals/<%= animal.id %>">Show profile</a></td>
-        <td><a class="danger-submit-button" href="/animals/<%= animal.id %>/delete">Delete profile</a></td>
+        <form method="post" action="/animals/<%= animal.id %>/delete">
+          <input type="hidden" name="_method" value="delete">
+          <td><input type="submit" value="Delete profile" class="danger-submit-button"></td>
+        </form>
       </tr>
     <% end %>
 
