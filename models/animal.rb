@@ -125,18 +125,18 @@ end
   end
 
   def health_check
-    if @healthy == true
-      return "healthy!"
+    if @healthy == "t"
+       "healthy!"
     else
-      return "undergoing treatment"
+       "undergoing treatment"
     end
   end
 
   def training_check
-    if @trained == true
-      return "I'm a good #{@breed}"
+    if @trained == 't'
+       "I'm a good #{@species}"
     else
-      return "I need some work"
+       "I need some work"
     end
   end
 

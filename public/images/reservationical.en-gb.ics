@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Booking.com\, b.v.//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:1348286886@booking.com
+ORGANIZER;CN=Sophie Mullins:mailto:
+DTSTAMP:20171210T141546Z
+DTSTART:20180621T143000
+DTEND:20180625T113000
+SUMMARY:The Old Manse
+LOCATION:7 Firdon Crescent\, Glasgow\, G15 6QQ\, United Kingdom
+GEO:55.9042358;-4.36382990000004
+URL:https://secure.booking.com/myreservations.en-gb.html?aid=304142;label=gen173nr-1FCAEoggJCAlhYSDNYBGhQiAEBmAEuuAEHyAEN2AEB6AEB-AELkgIBeagCAw;sid=8399ace84ed72c9c8f38fe160eec288f;auth_key=sY1eQhK7eKyOZpws&
+DESCRIPTION:Arrival: Thursday 21 June 2018, check-in between 14:30 - 20:00\n\nDeparture: Monday 25 June 2018, check-out between 09:30 - 11:30\n\nYou can view, change or cancel your booking here
+END:VEVENT
+END:VCALENDAR

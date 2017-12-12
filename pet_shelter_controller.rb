@@ -5,6 +5,9 @@ require('date')
 require_relative( './models/animal' )
 require_relative( './models/owner' )
 
+get '/' do
+  redirect to '/animals'
+end
 
 get '/animals' do
   @animals = Animal.all()
@@ -44,7 +47,6 @@ get '/animals/adopt' do
   @owners = Owner.all
   erb( :"animals/adopt")
 end
-
 
 get '/animals/:id' do
   @animal = Animal.find( params[:id])

@@ -4,13 +4,9 @@
     <img id="profile-pic" src="/images/<%= @animal.profile_pic %>" alt="picture of animal">
   </div>
   <div id="profile-text">
-    <p>Hi! My name is <%= @animal.name %>. I am a <%= @animal.species %>, my breed is <%= @animal.breed %>. As far as training goes, <%= @animal.training_check %> and heathwise I am <%= @animal.health_check %>. I have been here since <%= @animal.admission %>.</p>
+    <p>Hi! My name is <%= @animal.name %>. I am a <%= @animal.breed %> <%= @animal.species %>. As far as training goes <%= @animal.training_check %>. Healthwise I am <%= @animal.health_check %>. I have been here since <%= @animal.admission %>.</p>
   </div>
   <div id="profile-buttons">
     <p><a class="submit-button" href="/animals/<%= @animal.id %>/edit">Update record</a></p>
-    <form method="post" action="/animals/<%= @animal.id %>">
-      <input type="hidden" name="_method" value="delete">
-      <button class="submit-button">Delete profile</button>
-    </form>
   </div>
 </div>

@@ -22,7 +22,7 @@ animal2 = Animal.new({
   "healthy" => true,
   "adoptable" => false,
   "species" => "cat",
-  "breed" => "mixed",
+  "breed" => "mixed breed",
   "profile_pic" => "Greebo.jpg"
   })
 
@@ -59,7 +59,7 @@ animal5 = Animal.new({
   "healthy" => true,
   "adoptable" => true,
   "species" => "dragon",
-  "breed" => "draco lunaris",
+  "breed" => "swamp",
   "profile_pic" => "Errol.jpg"
   })
 
@@ -71,7 +71,7 @@ animal6 = Animal.new({
   "healthy" => true,
   "adoptable" => true,
   "species" => "horse",
-  "breed" => "flying horse",
+  "breed" => "flying",
   "profile_pic" => "binky.png"
   })
 
