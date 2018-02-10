@@ -5,13 +5,23 @@ This project was completed in week 5 of CodeClan's software development course. 
 
 Getting Started
 
-Follow these instructions to get the Discworld Animal Shelter up and running.
+Download this code and in the main directory:
 
-Prerequisites
+createdb pet_shelter
 
-What things you need to install the software and how to install them
+psql -d deal_tracker -f db/deal_tracker.sql
 
+ruby db/seeds.rb
 
+Then run the app:
+
+ruby app.rb
+
+To open in browser:
+
+http://localhost:4567
+
+Check out that delete button... I added this feature after looking at the Office of National Statistics data on volunteering and considered that the main users would be younger women and retirees. 
 
 Built With
 
